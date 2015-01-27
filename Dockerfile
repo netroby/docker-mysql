@@ -8,5 +8,6 @@ RUN yum install -y curl
 ADD ./init-mysql.sh /etc/init-mysql.sh
 ADD ./bashrc /root/.bashrc
 ADD ./my.cnf /etc/my.cnf
+RUN /etc/init-mysql.sh
 
 
