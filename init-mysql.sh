@@ -1,4 +1,4 @@
-# .bashrc
+#!/bin/sh
 mysql_install_db --user=mysql --datadir=/mysql-data
 mysqld_safe &
 sleep 15
