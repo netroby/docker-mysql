@@ -3,4 +3,8 @@
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
-/usr/bin/mysqld_safe &
+if [ ! -d /mysql-data/mysql ]; then
+    /root/init-mysql.sh
+else
+    /usr/bin/mysqld_safe &
+fi
