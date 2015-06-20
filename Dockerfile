@@ -1,13 +1,13 @@
 FROM fedora:22
-RUN yum clean all
-RUN yum update -y
-RUN yum install -y http://rpms.famillecollet.com/fedora/remi-release-22.rpm
+RUN dnf clean all
+RUN dnf update -y
+RUN dnf install -y http://rpms.famillecollet.com/fedora/remi-release-22.rpm
 RUN sed -i "s/enabled=0/enabled=1/g" /etc/yum.repos.d/remi.repo
-RUN yum install -y http://dev.mysql.com/get/mysql-community-release-fc22-5.noarch.rpm
-RUN yum update -y
-RUN yum install -y mysql-community-server
-RUN yum install -y curl
-RUN yum clean all
+RUN dnf install -y http://dev.mysql.com/get/mysql-community-release-fc22-5.noarch.rpm
+RUN dnf update -y
+RUN dnf install -y mysql-community-server
+RUN dnf install -y curl
+RUN dnf clean all
 ADD ./init-mysql.sh /root/init-mysql.sh
 ADD ./bashrc /root/.bashrc
 ADD ./my.cnf /etc/my.cnf
