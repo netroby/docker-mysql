@@ -1,2 +1,2 @@
 # Fedora with mysql
-Update on 2015-08-27
+Update on 2015-09-06
