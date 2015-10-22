@@ -17,6 +17,6 @@ else
     else
         chown -R mysql:mysql /mysql-data
         chmod -R a+rx /mysql-data
-        /usr/bin/mysqld_safe &
+        mysqld --user=mysql --datadir=/mysql-data &
     fi
 fi
