@@ -9,3 +9,8 @@ ADD ./init-mysql.sh /root/init-mysql.sh
 ADD ./bashrc /root/.bashrc
 ADD ./my.cnf /etc/my.cnf
 RUN chmod a+x /root/init-mysql.sh
+
+ENV HOME /root
+
+
+WORKDIR /root
