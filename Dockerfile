@@ -5,6 +5,8 @@ RUN dnf clean all && \
     dnf install -y iproute procps-ng htop mysql-community-server curl && \
     dnf update -y && \
     dnf clean all 
+
+ADD ./entrypoint.sh /entrypoint.sh
 ADD ./init-mysql.sh /root/init-mysql.sh
 ADD ./bashrc /root/.bashrc
 ADD ./my.cnf /etc/my.cnf
