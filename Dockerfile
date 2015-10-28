@@ -6,13 +6,17 @@ RUN dnf clean all && \
     dnf update -y && \
     dnf clean all 
 
-ADD ./entrypoint.sh /entrypoint.sh
-ADD ./init-mysql.sh /root/init-mysql.sh
-ADD ./bashrc /root/.bashrc
-ADD ./my.cnf /etc/my.cnf
-RUN chmod a+x /root/init-mysql.sh
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod a+x /entrypoint.sh
+
+COPY my.cnf /etc/my.cnf
 
 ENV HOME /root
 
+ENTRYPOINT ["/entrypoint.sh"]
+
+EXPOSE 3306
 
 WORKDIR /root
+
+CMD ["mysqld", "-u" , "mysql"]
