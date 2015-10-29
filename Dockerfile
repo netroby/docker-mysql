@@ -14,6 +14,7 @@ VOLUME /var/lib/mysql
 COPY my.cnf /etc/my.cnf
 
 ENV HOME /root
+ENV TERM xterm
 
 ENTRYPOINT ["/entrypoint.sh"]
 
