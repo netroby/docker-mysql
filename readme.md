@@ -1,5 +1,5 @@
 # Fedora with mysql
-Update on 2015-10-20
+Update on 2016-04-27
 
 https://hub.docker.com/r/netroby/docker-mysql/
 
